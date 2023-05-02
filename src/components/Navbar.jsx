@@ -4,17 +4,19 @@ import barIcon from '../assets/burger-checklist-list-menu-navigation-svgrepo-com
 import crossIcon from '..//assets/cross-svgrepo-com (1).png'
 import { useContext, useState } from 'react'
 import { AuthContext } from '../providers/AuthProvider'
+import LoadingSpinner from './LoadingSpinner'
 const Navbar = () => {
     const [toggle, setToggle] = useState(false)
     const { user } = useContext(AuthContext)
+    const uid = localStorage.getItem('uid')
     return (
         <div className="bg-[--bg-color]">
             <div className="container flex justify-between items-center p-[.5rem]">
                 <div className="text-[20px] font-[800]">Chefy</div>
                 {
-                    user ?
+                    uid ?
                         <div className="user" title={user?.displayName}>
-                            <img width={'40px'} height={'40px'} className='rounded-full' src={user?.photo_url} alt="user" />
+                            {user ? <img width={'40px'} height={'40px'} className='rounded-full' src={user?.photoURL} alt="user" /> : <LoadingSpinner />}
                         </div> : <Link className="font-[500] text-[--text-color]" to={'/login'}>Login</Link>
                 }
                 <div className='md:hidden'>

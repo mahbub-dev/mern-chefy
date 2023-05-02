@@ -1,9 +1,10 @@
-import { createBrowserRouter } from "react-router-dom";
+import { Navigate, createBrowserRouter } from "react-router-dom";
 import App from "../App";
 import Home from "../pages/Home";
 import Login from "../pages/Login";
 import Chef from "../pages/Chef";
 import Register from "../pages/Register";
+const uid = localStorage.getItem('uid')
 const router = createBrowserRouter([
 	{
 		path: "/",
@@ -14,11 +15,11 @@ const router = createBrowserRouter([
 				element: <Home />
 			}, {
 				path: '/login',
-				element: <Login />
+				element: !uid ? <Login /> : <Navigate to={'/'} />
 			},
 			{
 				path: '/register',
-				element: <Register />
+				element: !uid ? <Register /> : <Navigate to={'/'} />
 			}
 			, {
 				path: '/chef/:id',
