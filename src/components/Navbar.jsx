@@ -9,13 +9,13 @@ const Navbar = () => {
     const { user } = useContext(AuthContext)
     return (
         <div className="bg-[--bg-color]">
-            <div className="container max-w-[1240px] m-auto  flex justify-between items-center py-[.5rem]">
-                <div className="logo"><img src={logo} alt="logo" /></div>
+            <div className="container flex justify-between items-center p-[.5rem]">
+                <div className="text-[20px] font-[800]">Chefy</div>
                 {
-                    user &&
-                    <div className="user">
-                        <img width={'40px'} height={'40px'} className='rounded-full' src={user?.photo_url} alt="user" />
-                    </div>
+                    user ?
+                        <div className="user" title={user?.displayName}>
+                            <img width={'40px'} height={'40px'} className='rounded-full' src={user?.photo_url} alt="user" />
+                        </div> : <Link className="font-[500] text-[--text-color]" to={'/login'}>Login</Link>
                 }
                 <div className='md:hidden'>
                     {toggle ?
@@ -26,16 +26,9 @@ const Navbar = () => {
                 </div>
 
                 <div className={`links md:flex ${toggle ? 'flex' : 'hidden'} top-14 right-0 bg-[--bg-color] px-[1rem] text-right absolute md:static  flex-col md:flex-row gap-[.5rem] font-[500] text-[--text-color]`} >
-                    <Link className=''>Home</Link>
-                    {
-                        user ?
-                            <button className=''>Logout</button>
-                            : <><Link className=''>Login</Link>
-                                <Link className=''>Resiter</Link></>
-                    }
+                    <Link to={'/'}>Home</Link>
+                    <Link to={'/blog'}>Blog</Link>
 
-                    <Link className=''>About</Link>
-                    <Link className=''>Contact Us</Link>
                 </div>
 
 
