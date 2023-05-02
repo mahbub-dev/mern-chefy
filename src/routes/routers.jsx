@@ -2,8 +2,8 @@ import { createBrowserRouter } from "react-router-dom";
 import App from "../App";
 import Home from "../pages/Home";
 import Login from "../pages/Login";
-import Resgister from "../pages/Resgister";
 import Chef from "../pages/Chef";
+import Register from "../pages/Register";
 const router = createBrowserRouter([
 	{
 		path: "/",
@@ -18,7 +18,7 @@ const router = createBrowserRouter([
 			},
 			{
 				path: '/register',
-				element: <Resgister />
+				element: <Register />
 			}
 			, {
 				path: '/chef/:id',
