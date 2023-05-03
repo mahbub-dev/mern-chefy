@@ -31,7 +31,16 @@ const router = createBrowserRouter([
 			}
 			, {
 				path: '/chef/:id',
-				element: <Chef />
+				element: <Chef />,
+				loader: async ({ params }) => {
+					const res = await fetch(`${import.meta.env.VITE_SERVER_URI}/chef/${params.id}`)
+					const chef = await res.json()
+					const res2 = await fetch(`${import.meta.env.VITE_SERVER_URI}/recipe/chef/${params.id}`)
+					const recipe = await res2.json()
+
+					return { chef, recipe }
+
+				}
 			}
 		]
 	},

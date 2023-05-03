@@ -1,6 +1,9 @@
 /* eslint-disable react/prop-types */
 
+import { useNavigate } from "react-router-dom";
+
 const ChefCard = ({ item }) => {
+    const navigate = useNavigate()
     const { picture, name, years_of_experience, num_of_recipes, likes } = item
     return (
         <div className="max-w-xs rounded overflow-hidden shadow-lg bg-white">
@@ -18,7 +21,7 @@ const ChefCard = ({ item }) => {
                 </p>
             </div>
             <div className="px-6 py-4">
-                <button className="bg-[--btn-color] hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
+                <button onClick={() => { navigate(`chef/${item.id}`) }} className="bg-[--btn-color]  hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
                     View Recipes
                 </button>
             </div>
