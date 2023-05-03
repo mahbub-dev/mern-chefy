@@ -1,6 +1,7 @@
-import React from 'react'
+
 import ChefCard from '../components/ChefCard'
 import { useLoaderData } from 'react-router-dom'
+import LoadingSpinner from '../components/LoadingSpinner'
 const Home = () => {
 
     const data = useLoaderData()
@@ -16,9 +17,9 @@ const Home = () => {
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <h2 className="text-3xl font-extrabold text-gray-900">Chef</h2>
                     <div className="mt-10 grid gap-10 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-                    {
-                        data && data.map(i => <ChefCard key={i.id} item={i} />)
-                    }
+                        {
+                            data.length ? data.map(i => <ChefCard key={i.id} item={i} />) : <LoadingSpinner />
+                        }
                     </div>
                 </div>
             </section>

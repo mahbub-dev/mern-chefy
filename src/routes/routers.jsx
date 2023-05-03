@@ -15,10 +15,16 @@ const router = createBrowserRouter([
 				path: '/',
 				element: <Home />,
 				loader: async () => {
-					const res = await fetch(`${import.meta.env.VITE_SERVER_URI}/chef`)
-					console.log(res)
-					const data = await res.json()
-					return data
+					try {
+						const res = await fetch(`${import.meta.env.VITE_SERVER_URI}/chef`)
+
+						const data = await res.json()
+						return data
+					} catch (error) {
+						console.log(error)
+						return []
+					}
+
 				}
 
 			}, {
@@ -33,12 +39,20 @@ const router = createBrowserRouter([
 				path: '/chef/:id',
 				element: <Chef />,
 				loader: async ({ params }) => {
-					const res = await fetch(`${import.meta.env.VITE_SERVER_URI}/chef/${params.id}`)
-					const chef = await res.json()
-					const res2 = await fetch(`${import.meta.env.VITE_SERVER_URI}/recipe/chef/${params.id}`)
-					const recipe = await res2.json()
+					try {
+						const res = await fetch(`${import.meta.env.VITE_SERVER_URI}/chef/${params.id}`)
+						const chef = await res.json()
+						const res2 = await fetch(`${import.meta.env.VITE_SERVER_URI}/recipe/chef/${params.id}`)
+						const recipe = await res2.json()
+						return { chef, recipe }
 
-					return { chef, recipe }
+					} catch (error) {
+						console.log(error)
+						const chef = {}
+						const recipe = []
+						return { chef, recipe }
+					}
+
 
 				}
 			}
