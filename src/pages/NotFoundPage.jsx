@@ -6,6 +6,9 @@ const NotFoundPage = () => {
           <h2 className="text-center text-4xl font-bold text-gray-800">404</h2>
           <p className="mt-2 text-center text-lg font-medium text-gray-600">Oops! This page could not be found.</p>
         </div>
+        <div>
+          <img src="https://internetdevels.com/sites/default/files/public/blog_preview/404_page_cover.jpg" alt="" />
+        </div>
         <div className="mt-8 space-y-2">
           <p className="text-center text-base font-medium text-gray-600">It looks like you're lost in space...</p>
           <div className="mt-6 flex justify-center">
