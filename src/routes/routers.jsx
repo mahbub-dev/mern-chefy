@@ -5,6 +5,7 @@ import Login from "../pages/Login";
 import Chef from "../pages/Chef";
 import Register from "../pages/Register";
 import NotFoundPage from "../pages/NotFoundPage";
+import Blog from "../pages/Blog";
 const uid = localStorage.getItem('uid')
 const router = createBrowserRouter([
 	{
@@ -51,9 +52,10 @@ const router = createBrowserRouter([
 						const recipe = []
 						return { chef, recipe }
 					}
-
-
 				}
+			}, {
+				path: '/blog',
+				element: <Blog />
 			}
 		]
 	},
