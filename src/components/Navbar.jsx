@@ -1,7 +1,7 @@
 import { Link, useLocation } from 'react-router-dom'
 import barIcon from '../assets/burger-checklist-list-menu-navigation-svgrepo-com.png'
 import crossIcon from '..//assets/cross-svgrepo-com (1).png'
-import { useContext, useEffect, useState } from 'react'
+import { useContext,  useState } from 'react'
 import { AuthContext } from '../providers/AuthProvider'
 import LoadingSpinner from './LoadingSpinner'
 const Navbar = () => {
