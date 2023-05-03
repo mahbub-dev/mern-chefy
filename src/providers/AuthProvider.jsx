@@ -14,14 +14,14 @@ const AuthProvider = ({ children }) => {
         }
     }, [])
     useEffect(() => {
-        onAuthStateChanged(auth, (user) => {
+        const unsubscribe = onAuthStateChanged(auth, (user) => {
             if (user) {
                 setUser(user)
-                // ...
             } else {
                 setUser('')
             }
         });
+        return () => unsubscribe()
     }, [auth, isLoggedIn])
 
     const info = { user, isLoggedIn, setIsloggedIn }
