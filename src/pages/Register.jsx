@@ -8,7 +8,6 @@ import { toast } from 'react-toastify';
 const Register = () => {
   const navigate = useNavigate()
   const [registerData, setRegisterData] = useState({ email: '', password: '', name: '', photo_url: '' })
-  const [error, setError] = useState(false)
   const auth = getAuth(app)
   const handleChange = (e) => {
     setRegisterData(p => ({ ...p, [e.target.name]: e.target.value }))
@@ -27,15 +26,15 @@ const Register = () => {
       const userCredential = await createUserWithEmailAndPassword(auth, registerData.email, registerData.password)
       const user = userCredential.user;
       await updateProfile(user, { displayName: registerData.name, photoURL: registerData.photo_url })
-      navigate('/')
+      navigate('/login')
     } catch (error) {
       toast(error.message)
     }
 
   }
   return (
-    <div className="container m-auto max-w-[606px] p-5 bg-white md:px-[73px] md:py-[76px]">
-      <h1 className="md:text-[35px] text-[25px] font-[600] text-[--text-color] text-center ">Register your account</h1>
+    <div className="container m-auto max-w-[606px] p-5 bg-[--bg-color] md:px-[73px] md:py-[76px]">
+      <h1 className="mb-5 md:text-[35px] text-[25px] font-[600] text-[--text-color] text-center">Register your account</h1>
       <form className="flex flex-col" onSubmit={handleSubmit}>
         <Input
           type='text'
