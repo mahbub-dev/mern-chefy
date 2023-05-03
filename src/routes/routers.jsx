@@ -4,12 +4,13 @@ import Home from "../pages/Home";
 import Login from "../pages/Login";
 import Chef from "../pages/Chef";
 import Register from "../pages/Register";
+import NotFoundPage from "../pages/NotFoundPage";
 const uid = localStorage.getItem('uid')
-console.log(import.meta.env.VITE_SERVER_URI)
 const router = createBrowserRouter([
 	{
 		path: "/",
 		element: <App></App>,
+		errorElement: <NotFoundPage />,
 		children: [
 			{
 				path: '/',
@@ -17,14 +18,12 @@ const router = createBrowserRouter([
 				loader: async () => {
 					try {
 						const res = await fetch(`${import.meta.env.VITE_SERVER_URI}/chef`)
-
 						const data = await res.json()
 						return data
 					} catch (error) {
 						console.log(error)
 						return []
 					}
-
 				}
 
 			}, {
