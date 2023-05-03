@@ -1,10 +1,16 @@
 
-import { useLoaderData } from 'react-router-dom'
+import { Navigate, useLoaderData } from 'react-router-dom'
 import RecipeCard from '../components/RecipeCard'
 import LoadingSpinner from '../components/LoadingSpinner'
+import { useContext } from 'react'
+import { AuthContext } from '../providers/AuthProvider'
 
 const Chef = () => {
+  const { isLoggedIn } = useContext(AuthContext)
   const { chef, recipe } = useLoaderData()
+  if (!isLoggedIn) {
+    return <Navigate to={'/login'} />
+  }
   return (
     <div className='container'>
       {/* banner section  */}

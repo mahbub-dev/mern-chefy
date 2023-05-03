@@ -7,6 +7,12 @@ export const AuthContext = createContext()
 const AuthProvider = ({ children }) => {
     const auth = getAuth(app)
     const [user, setUser] = useState('')
+    const [isLoggedIn, setIsloggedIn] = useState(false)
+    useEffect(() => {
+        if (localStorage.getItem('uid')) {
+            setIsloggedIn(true)
+        }
+    }, [])
     useEffect(() => {
         onAuthStateChanged(auth, (user) => {
             if (user) {
@@ -16,9 +22,9 @@ const AuthProvider = ({ children }) => {
                 setUser('')
             }
         });
-    }, [auth])
+    }, [auth, isLoggedIn])
 
-    const info = { user }
+    const info = { user, isLoggedIn, setIsloggedIn }
     return (
         <AuthContext.Provider value={info}>
             {children}

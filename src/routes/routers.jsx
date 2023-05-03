@@ -37,7 +37,7 @@ const router = createBrowserRouter([
 			}
 			, {
 				path: '/chef/:id',
-				element: <Chef />,
+				element: <Chef /> ,
 				loader: async ({ params }) => {
 					try {
 						const res = await fetch(`${import.meta.env.VITE_SERVER_URI}/chef/${params.id}`)
@@ -54,7 +54,7 @@ const router = createBrowserRouter([
 					}
 				}
 			}, {
-				path: '/blog',
+				path: '/blogs',
 				element: <Blog />
 			}
 		]

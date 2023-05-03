@@ -7,6 +7,7 @@ import { AuthContext } from "../providers/AuthProvider"
 import app from "../../firebase.config";
 import { toast } from 'react-toastify';
 const Login = () => {
+  const { setIsloggedIn } = useContext(AuthContext)
   const navigate = useNavigate()
   const [loginData, setLoginData] = useState({ email: '', password: '' })
   const auth = getAuth(app)
@@ -16,6 +17,7 @@ const Login = () => {
 
   const setUIDtoLocalStorageAndNavigate = (uid) => {
     localStorage.setItem('uid', uid)
+    setIsloggedIn(true)
     navigate('/')
   }
   const loginInWithGoogle = () => {
