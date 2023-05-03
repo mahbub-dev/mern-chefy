@@ -1,7 +1,6 @@
 /* eslint-disable react/prop-types */
 import { useState } from 'react';
-import unfavoIcon from '../assets/favourite-svgrepo-com.png'
-import favoIcon from '../assets/favourite-svgrepo-com (1).png'
+import { toast } from 'react-toastify';
 const RecipeCard = ({ item }) => {
     const { recipe_name
         , ingredients, cooking_method, rating } = item
@@ -9,6 +8,7 @@ const RecipeCard = ({ item }) => {
 
     const handleFavorite = () => {
         setFavorite(!favorite);
+        toast('Recipe is marked as favorite')
     };
 
     return (
@@ -17,13 +17,8 @@ const RecipeCard = ({ item }) => {
                 <div className="flex items-center justify-between">
                     <h3 className="text-xl font-medium text-gray-800">{recipe_name
                     }</h3>
-                    <button onClick={handleFavorite}>
-                        {favorite ? (
-                             <img src={favoIcon} width={'30px'} alt="favo" />
-                            
-                        ) : (
-                            <img src={unfavoIcon} width={'30px'} alt="unfavo" />
-                        )}
+                    <button className={`bg-[--btn-color] p-[.5rem] ${favorite && 'opacity-50'} text-white rounded`} onClick={handleFavorite} disabled={favorite}>
+                        Favorite
                     </button>
                 </div>
                 <div className="mt-2">
