@@ -16,15 +16,15 @@ const Chef = () => {
       {/* banner section  */}
       {
         Object.keys(chef).length ?
-          <section className="  bg-[--bg-color] py-12">
+          <section className="  bg-[--bg-color] py-12 text-[--text-color]">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="md:flex md:items-center md:justify-between">
                 <div className="flex-1 min-w-0">
                   <div className="flex items-center">
                     <img className="h-16 w-16 rounded-full" src={chef?.picture} alt="Chef" />
                     <div className="ml-3">
-                      <h2 className="text-2xl font-bold text-black">{chef?.name}</h2>
-                      <p className="text-base font-medium text-black-300">Chef</p>
+                      <h2 className="text-2xl font-bold ">{chef?.name}</h2>
+                      <p className="text-base font-medium ">Chef</p>
                     </div>
                   </div>
                   <div className="mt-3 ">
@@ -48,9 +48,9 @@ const Chef = () => {
 
 
       {/* recipe section  */}
-      <section className="bg-[--bg-color] py-12 mt-20 ">
+      <section className="bg-[--bg-color] py-12 mt-20 rounded mb-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-extrabold text-gray-900">Recipe</h2>
+          <h2 className="text-3xl font-extrabold text-[--text-color]">Recipe</h2>
           <div className="mt-10 grid gap-10 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3">
             {
               recipe.length ? recipe.map(i => <RecipeCard key={i.id} item={i} />) : <LoadingSpinner />

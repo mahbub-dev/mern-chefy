@@ -3,10 +3,10 @@ import React from "react";
 const ref = React.createRef()
 const Blog = () => {
     return (
-        <div className='container'>
+        <div className='container text-[--text-color]'>
             {/* generating pdf  */}
             <div className='flex gap-5 items-center justify-center bg-[yellow] rounded w-[fit-content] mx-auto my-5 px-5'>
-                <h2 className='text-[30px]'>Get Pdf file of this page</h2>
+                <h2 className='text-[30px] text-black'>Get Pdf file of this page</h2>
                 <Pdf targetRef={ref} filename="chefy-blog.pdf">
                     {({ toPdf }) => <button onClick={toPdf}><img src="https://www.svgrepo.com/show/474950/print.svg" width={'30px'} alt="" /></button>}
                 </Pdf>

@@ -1,7 +1,7 @@
 :root {
-	--text-color: #bf360c;
-	--btn-color: #ff5722;
-	--bg-color: #fff3e0;
+	--text-color: #F5F5F5   ;
+	--btn-color: #FF5E5E  ;
+	--bg-color:  #1E1E1E  ;
 }
 .banner {
 	background-image: linear-gradient(to right, rgba(202, 114, 224, 0.5), rgba(255, 243, 224, 0.5)),url("https://img.freepik.com/free-psd/tasty-food-banner-template_23-2148985991.jpg?w=1380&t=st=1683032982~exp=1683033582~hmac=3ee1fc8a82977c5c3e94fb585553615fb5bb6d9f78190777c94d8eba1979764f")

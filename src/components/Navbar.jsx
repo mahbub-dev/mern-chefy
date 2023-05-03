@@ -12,7 +12,7 @@ const Navbar = () => {
     return (
         <div className="bg-[--bg-color]">
             <div className="container flex justify-between items-center p-[.5rem]">
-                <div className="text-[20px] font-[800]">Chefy</div>
+                <div className="text-[20px] text-[--text-color] font-[800]">Chefy</div>
                 {/* conditional rendering.login or user profile picture  */}
                 {
                     isLoggedIn ?
