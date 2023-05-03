@@ -71,7 +71,7 @@ const Home = () => {
 
                         <div className="contact-card">
                             <h3 className="contact-title">Email</h3>
-                            <p className="contact-info">info@example.com</p>
+                            <p className="contact-info">info@chefy.com</p>
                         </div>
                     </div>
                 </div>
