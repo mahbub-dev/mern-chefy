@@ -4,7 +4,7 @@ const ChefCard = ({ item }) => {
     const { picture, name, years_of_experience, num_of_recipes, likes } = item
     return (
         <div className="max-w-xs rounded overflow-hidden shadow-lg bg-white">
-            <img className="w-full h-[200px]" src={picture} alt={name} />
+            <img className="w-full h-[200px] min-w-[300px]" src={picture} alt={name} />
             <div className="px-6 py-4">
                 <div className="font-bold text-xl mb-2">{name}</div>
                 <p className="text-gray-700 text-base mb-2">
