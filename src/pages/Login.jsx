@@ -55,7 +55,7 @@ const Login = () => {
     }
   }
   return (
-    <div  className=" rounded container mx-auto max-w-[606px] p-5 bg-[--bg-color] md:px-[73px] min-h-[76vh] md:py-[76px]">
+    <div  className=" rounded my-10  mx-auto max-w-[606px] p-5 bg-[--bg-color] md:px-[73px] min-h-[76vh] md:py-[76px]">
       <h1 className=" md:text-[35px] text-[25px] text-center font-[600] text-[--text-color] mb-5 ">Login your account</h1>
       <form className="flex flex-col" onSubmit={handleSubmit}>
         <Input
@@ -74,15 +74,15 @@ const Login = () => {
           value={loginData.password}
           onChange={handleChange}
         />
-        <button type="submit" className="w-100 p-[10px] text-white mb-[24px] text-[22px] font-[800] rounded bg-[--btn-color]">Login</button>
+        <button type="submit" className="w-100 p-[10px] text-white mb-[24px] text-[18px] font-[800] rounded bg-[--btn-color]">Login</button>
       </form>
       <div className="flex w-[100%] gap-4">
-        <button onClick={loginInWithGoogle} className="w-[50%] p-[10px] text-white mb-[24px] md:text-[22px] font-[800] rounded bg-[black]">Login with Google</button>
-        <button onClick={loginWithGitub} className="w-[50%] p-[10px] text-white mb-[24px] md:text-[22px] font-[800] rounded bg-[#8585eb]">Login with Github</button>
+        <button onClick={loginInWithGoogle} className="w-[50%] p-[10px] text-white mb-[24px] md:text-[18px] font-[800] rounded bg-[black]">Login with Google</button>
+        <button onClick={loginWithGitub} className="w-[50%] p-[10px] text-white mb-[24px] md:text-[18px] font-[800] rounded bg-[#8585eb]">Login with Github</button>
       </div>
       <p className="text-[--text-color] font-[600] text-center" >
         <span >Dont’t Have An Account?</span>
-        <Link className="text-[--text-color]" to='/register'>Register</Link>
+        <Link className="text-blue-500" to='/register'>Register</Link>
       </p>
     </div>
   )

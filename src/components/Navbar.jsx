@@ -6,13 +6,13 @@ import { AuthContext } from '../providers/AuthProvider'
 import LoadingSpinner from './LoadingSpinner'
 const Navbar = () => {
     const [toggle, setToggle] = useState(false)
-    const { user, isLoggedIn } = useContext(AuthContext)
+    const { user, isLoggedIn,logOut } = useContext(AuthContext)
     const location = useLocation().pathname.split('/')[1]
 
     return (
         <div className="bg-[--bg-color]">
             <div className="container flex justify-between items-center p-[.5rem]">
-                <div className="text-[20px] text-[--text-color] font-[800]">Chefy</div>
+                <div className="text-[20px] text-[--text-color] font-[800]"><Link to={'/'}>Chefy</Link></div>
                 {/* conditional rendering.login or user profile picture  */}
                 {
                     isLoggedIn ?
@@ -30,9 +30,12 @@ const Navbar = () => {
                 </div>
 
                 {/* links  */}
-                <div className={`links md:flex ${toggle ? 'flex' : 'hidden'} top-14 right-0 bg-[--bg-color] px-[1rem] text-right absolute md:static  flex-col md:flex-row gap-[.5rem] font-[500] text-[--text-color]`} >
+                <div className={`links md:flex ${toggle ? 'flex' : 'hidden'} p-5 top-14 right-0 bg-[--bg-color] px-[1rem] text-right absolute md:static  flex-col md:flex-row gap-[.5rem] font-[500] text-[--text-color]`} >
                     <Link to={'/'} className={`${location == '' && 'text-blue-500'}`}>Home</Link>
                     <Link to={'/blogs'} className={`${location == 'blogs' && 'text-blue-500'}`}>Blog</Link>
+                    {
+                        isLoggedIn && <button onClick={logOut}>Logout</button>
+                    }
 
                 </div>
             </div>

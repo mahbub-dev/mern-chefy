@@ -33,7 +33,7 @@ const Register = () => {
 
   }
   return (
-    <div className="container m-auto max-w-[606px] p-5 bg-[--bg-color] md:px-[73px] md:py-[76px]">
+    <div className=" m-auto max-w-[606px] my-10 p-5 bg-[--bg-color] md:px-[73px] md:py-[76px]">
       <h1 className="mb-5 md:text-[35px] text-[25px] font-[600] text-[--text-color] text-center">Register your account</h1>
       <form className="flex flex-col" onSubmit={handleSubmit}>
         <Input
@@ -68,7 +68,7 @@ const Register = () => {
           value={registerData.password}
           onChange={handleChange}
         />
-        <button type="submit" className="w-100 p-[10px] text-white mb-[24px] rounded bg-[--btn-color] text-[22px] font-[800]">Register</button>
+        <button type="submit" className="w-100 p-[10px] text-white mb-[24px] rounded bg-[--btn-color] text-[18px] font-[800]">Register</button>
       </form>
     </div>
   )

@@ -1,4 +1,4 @@
-import { getAuth, onAuthStateChanged } from "firebase/auth"
+import { getAuth, onAuthStateChanged, signOut } from "firebase/auth"
 import { createContext, useState, useEffect } from "react"
 import app from "../../firebase.config"
 export const AuthContext = createContext()
@@ -24,7 +24,13 @@ const AuthProvider = ({ children }) => {
         return () => unsubscribe()
     }, [auth, isLoggedIn])
 
-    const info = { user, isLoggedIn, setIsloggedIn }
+    const logOut = () => {
+        signOut(auth)
+        localStorage.clear()
+        window.location.reload()
+
+    }
+    const info = { user, isLoggedIn, setIsloggedIn,logOut }
     return (
         <AuthContext.Provider value={info}>
             {children}

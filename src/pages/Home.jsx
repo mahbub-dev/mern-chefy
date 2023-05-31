@@ -13,7 +13,7 @@ const Home = () => {
                     Our team of passionate cooks and chefs has curated a <br /> collection of delicious and authentic American recipes <br /> that you can try in the comfort of your own home</p>
             </section>
 
-            <section className="bg-[--bg-color] py-12 mt-20 rounded">
+            <section className="bg-[--bg-color] py-12  rounded">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <h2 className="text-3xl font-extrabold text-[--text-color]">Chef</h2>
                     <div className="mt-10 grid gap-10 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
@@ -26,7 +26,7 @@ const Home = () => {
 
 
             {/* testimonials section  */}
-            <section className="bg-[--bg-color] py-12 mt-20 rounded">
+            <section className="bg-[--bg-color] py-12  rounded">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <h2 className="text-3xl font-extrabold text-[--text-color]">What Our Customers Say</h2>
                     <div className="mt-10 grid gap-10 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
@@ -55,7 +55,7 @@ const Home = () => {
 
             {/* contact section  */}
 
-            <section className="bg-[--bg-color] py-12 my-20 rounded">
+            <section className="bg-[--bg-color] py-12 mb-10 rounded">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <h2 className="text-3xl font-extrabold text-[--text-color]">Contact Us</h2>
                     <div className="mt-10 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
